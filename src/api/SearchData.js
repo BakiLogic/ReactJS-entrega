@@ -11,26 +11,16 @@ const SearchData = (props) => {
       const api_url = `https://api.api-ninjas.com/v1/rhyme?word=${palavra}`
 
 
-      const response = await fetch(api_url, {
-        method: 'GET',
-        headers: {
-            'X-Api-Key': 'xkOy/83rKwn6omjpGJqreg==JovTO0q9bXfw6vqY'
-        },
-      })
+      const response = await fetch(api_url, {method: 'GET', headers: {'X-Api-Key': 'xkOy/83rKwn6omjpGJqreg==JovTO0q9bXfw6vqY'},})
       setData(await response.json())
     }
-    const contextValue = useMemo(() => ({
-      data,
-      fetchData
-    }), [data])
-    useEffect(() => {
-      fetchData('')
-    }, [])
+    const contextValue = useMemo(() => ({data,fetchData}),[data]) 
+    useEffect(() => {fetchData('')},[])
   
     return (
-      <ContextFetchData.Provider value={contextValue}>
+      <ContextDados.Provider value={contextValue}>
         {props.children}
-      </ContextFetchData.Provider>
+      </ContextDados.Provider>
     )
   }
 
