@@ -1,11 +1,12 @@
 import ListGroup from 'react-bootstrap/ListGroup'
 
-const Resposta = ({ dados, erro }) => {
+const CaixaResposta = ({ dados, erro }) => {
     
-    if (erro == false) {
+    if (erro === false) {
       return (
         <div>
-          {dados.map((rima, index) => (<div key={index} className='inputRhyme'>
+          {dados.map((rima, index) => (
+            <div key={index} className='inputRhyme'>
             <ListGroup.Item>{index + 1}. {rima.word}</ListGroup.Item>
           </div>))}
         </div>
@@ -15,4 +16,4 @@ const Resposta = ({ dados, erro }) => {
     }
   }
   
-  export default Resposta
+  export default CaixaResposta
