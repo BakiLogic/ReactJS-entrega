@@ -31,7 +31,7 @@ const BarraPesquisa = () => {
 
     return (
         <div>
-            <input type="text" value={palavra} onChange={editPalavra} />
+            <input type="text" value={palavra} onChange={editPalavra} className = "searchBar"/>
             <Button onClick={buscarPalavra} variant="outline-warning">...</Button>
             {(erro !== 0||dados.length > 0) && <CaixaResposta dados={dados} erro={erro}/>}
             <ErrorMsg catchErro={erro}/>
