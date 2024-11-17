@@ -4,29 +4,22 @@ export const ContextDados = createContext()
 
 const SearchData = (props) => {
 
-    const [data, setData] = useState([])
+    const [dados, setDados] = useState([])
 
-    const fetchData = async (palavra) => {
+    const buscarDados = async (palavra) => {
 
       const api_url = `https://api.api-ninjas.com/v1/rhyme?word=${palavra}`
 
 
-      const response = await fetch(api_url, {method: 'GET', headers: {'X-Api-Key': 'xkOy/83rKwn6omjpGJqreg==JovTO0q9bXfw6vqY'},})
-      setData(await response.json())
+      const resposta = await fetch(api_url, {method: 'GET', headers: {'X-Api-Key': 'xkOy/83rKwn6omjpGJqreg==JovTO0q9bXfw6vqY'},})
+      setDados(await resposta.json())
     }
-    const contextValue = useMemo(() => ({data,fetchData}),[data]) 
-    useEffect(() => {fetchData('')},[])
+    const contextValue = useMemo(() => ({dados,buscarDados}),[dados]) 
+    useEffect(() => {buscarDados('')},[])
   
     return (
-      <ContextDados.Provider value={contextValue}>
-        {props.children}
-      </ContextDados.Provider>
+      <ContextDados.Provider value={contextValue}> {props.children} </ContextDados.Provider>
     )
   }
-
-
-
-
-
 
 export default SearchData
