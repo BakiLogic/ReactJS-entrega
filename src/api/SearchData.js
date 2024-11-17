@@ -5,13 +5,19 @@ export const ContextDados = createContext()
 const SearchData = (props) => {
 
     const [dados, setDados] = useState([])
-
+    
     const buscarDados = async (palavra) => {
+    if (palavra){
+      const api_url =`https://api.api-ninjas.com/v1/rhyme?word=` + palavra
+        
+      const resposta = await fetch(api_url, {method: 'GET', headers: {
+        'X-Api-Key':'xkOy/83rKwn6omjpGJqreg==JovTO0q9bXfw6vqY'
+      },})
 
-      const api_url = `https://api.api-ninjas.com/v1/rhyme?word=` + palavra
 
-      const resposta = await fetch(api_url, {method: 'GET', headers: {'X-Api-Key': 'xkOy/83rKwn6omjpGJqreg==JovTO0q9bXfw6vqY'},})
+      console.log(api_url)
       setDados(await resposta.json())
+    }
     }
     const valorContexto = useMemo(() => ({dados,buscarDados}),[dados]) 
     useEffect(() => {buscarDados('')},[])
@@ -22,3 +28,4 @@ const SearchData = (props) => {
   }
 
 export default SearchData
+

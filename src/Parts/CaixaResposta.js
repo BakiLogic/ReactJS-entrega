@@ -7,7 +7,7 @@ const CaixaResposta = ({ dados, erro }) => {
         <div>
           {dados.map((rima, index) => (
             <div key={index} className='inputRhyme'>
-            <ListGroup.Item>{index + 1}. {rima.word}</ListGroup.Item>
+            <ListGroup.Item>{index + 1}. {rima}</ListGroup.Item>
           </div>))}
         </div>
       )

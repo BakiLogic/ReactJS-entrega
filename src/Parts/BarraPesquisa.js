@@ -7,15 +7,15 @@ import Button from 'react-bootstrap/Button'
 
 const BarraPesquisa = () => {
     const {dados, buscarDados} = useContext(ContextDados)
-    const [palavraChave, setPalavraChave] = useState('')
+    const [palavra, setPalavraChave] = useState('')
     const [erro, setErro] = useState(0)
     const [initPesquisa, setPesquisar] = useState(false)
 
-    const resposta = () => {const palavra = palavraChave
+    const resposta = () => {const input = palavra
         if (!initPesquisa) {
             return
         }
-        if (palavra === '' || dados.length === 0) {
+        if (input === '' || dados.length === 0) {
             setErro(true)
         } else {
             setErro(false)
@@ -26,12 +26,12 @@ const BarraPesquisa = () => {
     const editPalavra = (event) => {setPalavraChave(event.target.value)}
     const buscarPalavra = () => {
         setPesquisar(true)
-        buscarDados(palavraChave)
+        buscarDados(palavra)
     }
 
     return (
         <div>
-            <input type="text" value={palavraChave} onChange={editPalavra} />
+            <input type="text" value={palavra} onChange={editPalavra} />
             <Button onClick={buscarPalavra} variant="outline-warning">...</Button>
             {(erro !== 0||dados.length > 0) && <CaixaResposta dados={dados} erro={erro}/>}
             <ErrorMsg catchErro={erro}/>
