@@ -4,6 +4,8 @@ Aplicação react que utiliza a api [Rhyme](https://api-ninjas.com/api/rhyme)
 
 Instruções:
 
+GH-Page deploy: https://bakilogic.github.io/Rhyme-React-API/
+
 Local host:
 Clone o repositorio
 Em uma IDE, utilize o comando "$ npm install"
