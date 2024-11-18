@@ -12,6 +12,7 @@ function App() {
         <BarraPesquisa/>
        </div>
       </header>
+      <script src = '../src/main.js'> </script>
     </div>
     </ContextDados>
   );
