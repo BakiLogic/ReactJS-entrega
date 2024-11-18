@@ -14,7 +14,7 @@ function ErrorMsg({catchErro}) {
     
     return (
         <>
-            <Toast show={visibility} >
+            <Toast show={visibility} className='ErrorMsgs'>
                 <Toast.Header>
                     ERRO             
                 </Toast.Header> 
