@@ -11,6 +11,7 @@ function App() {
         <h1 className= "Title">Rhymes API</h1>
         <BarraPesquisa/>
        </div>
+       <script src = '../src/main.js'> </script>
       </header>
     </div>
     </ContextDados>
