@@ -13,6 +13,7 @@ Acesse o http://localhost:3000/
 
 ![image](https://github.com/user-attachments/assets/bb26afb7-82f8-446c-bdbb-2b2efdd06499)
 
+para o uso da API, insira uma palavra em inglês na caixa de texto, pressione o botão ao lado, logo, as rimas para a palavra inserida
 
 Este sistema utiliza:
 HTML, CSS, JavaScript
